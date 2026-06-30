@@ -80,3 +80,14 @@ Deploying large-scale SAE analysis matrices over massive, industrial deep learni
 | [**Mechanistic Interpretability Diagnostics for Frontier LLMs**](details/mechanistic_interpretability_diagnostics.md) | Deployed within elite AI research laboratories (e.g., Anthropic Claude or OpenAI safety alignment loops). SAE engines map millions of internalized text and code features across deep transformer hidden layers, translating abstract statistical numbers into a clean, searchable, and auditable encyclopedia of conceptual nodes. | 2024 | [Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet](https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html) (Templeton et al., 2024) |
 | [**Automated Corporate Regulatory & Compliance Auditing**](details/corporate_regulatory_compliance_auditing.md) | Deep text perception layers operating within highly restricted financial and legal workflows pass operational prompts through fine-grained SAE filters. The system monitors feature node triggers continuously, flagging and blocking compliance violations (e.g., insider trading intent or data privacy breaches) early in hidden layer processing blocks before output characters are synthesized. | 2024 | [Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet](https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html) (Templeton et al., 2024) |
 | [**AI Safeguard Hardening Against Jailbreaking and Prompt Injection**](details/ai_safeguard_hardening_jailbreaking.md) | Hardens the security parameters of consumer-facing AI agents. Safety systems evaluate whether incoming malicious prompts contain hidden, multi-turn adversarial data paths by tracking whether they trigger structural feature clusters within an SAE-mapped hidden layer, dynamically neutralizing prompt execution before dangerous cross-platform tools are dispatched. | 2024 | [Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet](https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html) (Templeton et al., 2024) |
+
+## Star History
+<div align="center">
+<a href="https://www.star-history.com/?repos=ishandutta2007%2FAwesome-Sparse-Autoencoders&type=date&legend=bottom-right">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=ishandutta2007/Awesome-Sparse-Autoencoders&type=date&theme=dark&legend=bottom-right" />
+<source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=ishandutta2007/Awesome-Sparse-Autoencoders&type=date&legend=bottom-right" />
+<img alt="Star History Chart" src="https://api.star-history.com/chart?repos=ishandutta2007/Awesome-Sparse-Autoencoders&type=date&legend=bottom-right" />
+</picture>
+</a>
+</div>
