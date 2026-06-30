@@ -2,102 +2,102 @@
   <defs>
     <!-- Background Gradient -->
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0a051b" />
-      <stop offset="50%" stop-color="#0d0e2e" />
+      <stop offset="0%" stop-color="#060214" />
+      <stop offset="50%" stop-color="#0b0726" />
       <stop offset="100%" stop-color="#02000a" />
     </linearGradient>
 
     <!-- Tech Grid Pattern -->
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#251a5c" stroke-width="0.5" opacity="0.3"/>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1f1654" stroke-width="0.5" opacity="0.25"/>
     </pattern>
 
     <!-- Node Glow Filter -->
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="6" result="blur" />
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
 
-    <!-- Linear Gradient for Connections -->
-    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <!-- Linear Gradients for Connections -->
+    <linearGradient id="lineGradActive" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#8a2be2" />
       <stop offset="50%" stop-color="#00ffff" />
       <stop offset="100%" stop-color="#ff007f" />
     </linearGradient>
+
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00ffff" />
+      <stop offset="100%" stop-color="#9d4edd" />
+    </linearGradient>
   </defs>
 
   <style>
-    /* CSS Styles & Animations */
     .title-text {
       font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       font-weight: 800;
-      fill: #ffffff;
-      font-size: 42px;
+      fill: url(#textGrad);
+      font-size: 38px;
       letter-spacing: 2px;
     }
     .subtitle-text {
       font-family: 'Outfit', 'Inter', sans-serif;
-      font-weight: 300;
-      fill: #a0aec0;
-      font-size: 16px;
-      letter-spacing: 4px;
+      font-weight: 400;
+      fill: #7e8c9f;
+      font-size: 13px;
+      letter-spacing: 5px;
     }
-    .flow-line {
-      stroke: url(#lineGrad);
+    .flow-line-active {
+      stroke: url(#lineGradActive);
       stroke-width: 1.5;
       stroke-linecap: round;
-      opacity: 0.6;
+      opacity: 0.8;
+    }
+    .flow-line-inactive {
+      stroke: #2c226d;
+      stroke-width: 0.75;
+      stroke-linecap: round;
+      opacity: 0.3;
+      stroke-dasharray: 4, 4;
     }
     .pulse-line {
       stroke: #00ffff;
       stroke-width: 2;
-      stroke-dasharray: 15, 100;
+      stroke-dasharray: 10, 80;
       stroke-linecap: round;
-      animation: dash 6s linear infinite;
+      animation: dash 5s linear infinite;
     }
-    .pulse-line-reverse {
-      stroke: #ff007f;
-      stroke-width: 2;
-      stroke-dasharray: 15, 100;
-      stroke-linecap: round;
-      animation: dash-reverse 8s linear infinite;
-    }
-    .node {
-      animation: pulse 3s ease-in-out infinite alternate;
-    }
-    .node-cyan {
+    .node-active-cyan {
       fill: #00ffff;
       filter: url(#glow);
+      animation: pulse-glow 2s ease-in-out infinite alternate;
     }
-    .node-violet {
+    .node-active-violet {
       fill: #8a2be2;
       filter: url(#glow);
     }
-    .node-pink {
+    .node-active-pink {
       fill: #ff007f;
       filter: url(#glow);
+    }
+    .node-inactive {
+      fill: #1a153b;
+      stroke: #3c327d;
+      stroke-width: 1.5;
     }
 
     @keyframes dash {
       to {
-        stroke-dashoffset: -500;
+        stroke-dashoffset: -360;
       }
     }
-    @keyframes dash-reverse {
-      to {
-        stroke-dashoffset: 500;
-      }
-    }
-    @keyframes pulse {
+    @keyframes pulse-glow {
       0% {
-        r: 6;
-        opacity: 0.7;
+        opacity: 0.6;
       }
       100% {
-        r: 9;
         opacity: 1;
       }
     }
@@ -107,44 +107,62 @@
   <rect width="1000" height="300" fill="url(#bgGrad)" />
   <rect width="1000" height="300" fill="url(#grid)" />
 
-  <!-- Animated Connection Paths (Sparse Autoencoder bottleneck representation) -->
-  <!-- Left to bottleneck -->
-  <path d="M 100,80 Q 200,100 450,150" class="flow-line" />
-  <path d="M 100,150 Q 200,150 450,150" class="flow-line" />
-  <path d="M 100,220 Q 200,200 450,150" class="flow-line" />
-  <path d="M 100,80 Q 200,120 550,150" class="flow-line" />
-  <path d="M 100,220 Q 200,180 550,150" class="flow-line" />
+  <!-- Left Side: Clean Typography -->
+  <g transform="translate(80, 135)">
+    <text class="title-text" x="0" y="0">SPARSE AUTOENCODERS</text>
+    <text class="subtitle-text" x="0" y="40">EVOLUTION • VARIANTS • APPLICATIONS</text>
+  </g>
 
-  <!-- Bottleneck to Right -->
-  <path d="M 450,150 Q 750,100 900,80" class="flow-line" />
-  <path d="M 450,150 Q 750,150 900,150" class="flow-line" />
-  <path d="M 450,150 Q 750,200 900,220" class="flow-line" />
-  <path d="M 550,150 Q 750,110 900,80" class="flow-line" />
-  <path d="M 550,150 Q 750,190 900,220" class="flow-line" />
+  <!-- Right Side: Sparse Autoencoder Network Representation (X: 580 to 920) -->
+  <g>
+    <!-- Inactive Connection Paths -->
+    <!-- Inputs to Inactive Bottlenecks -->
+    <path d="M 600,90 Q 680,75 760,60" class="flow-line-inactive" />
+    <path d="M 600,150 Q 680,150 760,150" class="flow-line-inactive" />
+    <path d="M 600,210 Q 680,225 760,240" class="flow-line-inactive" />
+    <path d="M 600,90 Q 680,120 760,150" class="flow-line-inactive" />
+    <path d="M 600,210 Q 680,180 760,150" class="flow-line-inactive" />
 
-  <!-- Signal Pulses (Dynamic Dash Arrays) -->
-  <path d="M 100,80 Q 200,100 450,150" class="pulse-line" />
-  <path d="M 100,220 Q 200,200 450,150" class="pulse-line" />
-  <path d="M 450,150 Q 750,150 900,150" class="pulse-line" />
-  <path d="M 550,150 Q 750,110 900,80" class="pulse-line-reverse" />
+    <!-- Inactive Bottlenecks to Outputs -->
+    <path d="M 760,60 Q 840,75 920,90" class="flow-line-inactive" />
+    <path d="M 760,150 Q 840,150 920,150" class="flow-line-inactive" />
+    <path d="M 760,240 Q 840,225 920,210" class="flow-line-inactive" />
+    <path d="M 760,150 Q 840,120 920,90" class="flow-line-inactive" />
+    <path d="M 760,150 Q 840,180 920,210" class="flow-line-inactive" />
 
-  <!-- Nodes (Input Layer) -->
-  <circle cx="100" cy="80" r="7" class="node-violet" />
-  <circle cx="100" cy="150" r="7" class="node-violet" />
-  <circle cx="100" cy="220" r="7" class="node-violet" />
+    <!-- Active Connection Paths (Sparse representation) -->
+    <!-- Input 1 & 2 to Bottleneck 2 (Active) -->
+    <path d="M 600,90 Q 680,97 760,105" class="flow-line-active" />
+    <path d="M 600,150 Q 680,127 760,105" class="flow-line-active" />
+    <!-- Input 3 to Bottleneck 4 (Active) -->
+    <path d="M 600,210 Q 680,202 760,195" class="flow-line-active" />
 
-  <!-- Bottleneck Nodes (Highly Sparse, Overcomplete representation concept) -->
-  <circle cx="450" cy="150" r="8" class="node node-cyan" style="animation-delay: 0s;" />
-  <circle cx="550" cy="150" r="8" class="node node-cyan" style="animation-delay: 1.5s;" />
+    <!-- Bottleneck 2 (Active) to Output 1 & 2 -->
+    <path d="M 760,105 Q 840,97 920,90" class="flow-line-active" />
+    <path d="M 760,105 Q 840,127 920,150" class="flow-line-active" />
+    <!-- Bottleneck 4 (Active) to Output 3 -->
+    <path d="M 760,195 Q 840,202 920,210" class="flow-line-active" />
 
-  <!-- Output Nodes (Reconstruction) -->
-  <circle cx="900" cy="80" r="7" class="node-pink" />
-  <circle cx="900" cy="150" r="7" class="node-pink" />
-  <circle cx="900" cy="220" r="7" class="node-pink" />
+    <!-- Signal Pulses along Active Paths -->
+    <path d="M 600,90 Q 680,97 760,105" class="pulse-line" />
+    <path d="M 760,105 Q 840,127 920,150" class="pulse-line" style="animation-delay: 1s;" />
+    <path d="M 600,210 Q 680,202 760,195" class="pulse-line" style="animation-delay: 2s;" />
 
-  <!-- Title & Subtitle -->
-  <g transform="translate(500, 75)">
-    <text class="title-text" text-anchor="middle" y="0">SPARSE AUTOENCODERS</text>
-    <text class="subtitle-text" text-anchor="middle" y="160">EVOLUTION • VARIANTS • APPLICATIONS</text>
+    <!-- Input Nodes -->
+    <circle cx="600" cy="90" r="6" class="node-active-violet" />
+    <circle cx="600" cy="150" r="6" class="node-active-violet" />
+    <circle cx="600" cy="210" r="6" class="node-active-violet" />
+
+    <!-- Bottleneck Nodes (Sparse: 5 total, only 2 active/glowing) -->
+    <circle cx="760" cy="60" r="6" class="node-inactive" />
+    <circle cx="760" cy="105" r="7" class="node-active-cyan" />
+    <circle cx="760" cy="150" r="6" class="node-inactive" />
+    <circle cx="760" cy="195" r="7" class="node-active-cyan" />
+    <circle cx="760" cy="240" r="6" class="node-inactive" />
+
+    <!-- Output Nodes -->
+    <circle cx="920" cy="90" r="6" class="node-active-pink" />
+    <circle cx="920" cy="150" r="6" class="node-active-pink" />
+    <circle cx="920" cy="210" r="6" class="node-active-pink" />
   </g>
 </svg>
