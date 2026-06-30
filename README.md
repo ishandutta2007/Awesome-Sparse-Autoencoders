@@ -11,8 +11,9 @@ In modern artificial intelligence, SAEs have undergone a massive resurgence, tra
 
 The technical progression of sparse autoencoding has transitioned from classical tabular density regularizers to large-scale, dictionary-learning model auditing engines integrated with modern transformer scaling boundaries.
 
+```mermaid
 [Classical KL-Divergence SAEs (~2011)] ----> [Top-K & JumpReLU SAEs (2024)] ----> [Gated & Low-Rank SAE Transformers (2025-2026+)](Tabular Step Non-Linear L1 Math)             (Strict Non-Zero Neuron Sparsification)       (Mechanistic Model Auditing at Scale)
-
+```
 
 *   **The Classical Tabular Regularization Era (~2011–2018)**
     *   *Concept:* The early foundation era. SAEs were utilized to extract robust features from low-dimensional tabular data or pixel frames before standard classification. Sparsity was enforced gently by penalizing the average activation of a hidden unit using an $L_1$ norm or a **Kullback-Leibler (KL) Divergence** penalty layer against a tiny target firing rate (e.g., forcing neurons to fire only 5% of the time).
