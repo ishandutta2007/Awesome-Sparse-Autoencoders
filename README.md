@@ -4,6 +4,12 @@
   <img src="assets/banner.svg" alt="Awesome Sparse Autoencoders Banner" width="100%">
 </p>
 
+<p align="center">
+  <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a><a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+</p>
+
+> **Awesome Sparse Autoencoders (SAEs)**: A curated list of evolutionary phases, mathematical variants, mechanistic interpretability diagnostics, policy steering, and safety auditing techniques for Large Language Models (LLMs).
+
 ## 🧠 Sparse Autoencoders (SAEs): Evolution, Variants, Types, & Applications 🚀
 
 A Sparse Autoencoder (SAE) is an unsupervised neural network architecture designed to learn highly compressed, information-dense, and interpretable feature representations from raw input data. Structurally, an autoencoder consists of an **Encoder** that projects input data into a hidden bottleneck layer (the latent space), and a **Decoder** that reconstructs the original input from this hidden state. While standard autoencoders compress data by drastically shrinking the physical size of the bottleneck layer, Sparse Autoencoders take an alternative architectural path: they make the hidden layer **significantly larger** than the input layer (overcomplete), but enforce strict mathematical regularization penalties that force the network to keep the vast majority of hidden neurons completely inactive (zero or near-zero values) for any given input sample. 
