@@ -1,5 +1,10 @@
 # Awesome-Sparse-Autoencoders
-## Sparse Autoencoders (SAEs): Evolution, Variants, Types, & Applications
+
+<p align="center">
+  <img src="assets/banner.svg" alt="Awesome Sparse Autoencoders Banner" width="100%">
+</p>
+
+## 🧠 Sparse Autoencoders (SAEs): Evolution, Variants, Types, & Applications 🚀
 
 A Sparse Autoencoder (SAE) is an unsupervised neural network architecture designed to learn highly compressed, information-dense, and interpretable feature representations from raw input data. Structurally, an autoencoder consists of an **Encoder** that projects input data into a hidden bottleneck layer (the latent space), and a **Decoder** that reconstructs the original input from this hidden state. While standard autoencoders compress data by drastically shrinking the physical size of the bottleneck layer, Sparse Autoencoders take an alternative architectural path: they make the hidden layer **significantly larger** than the input layer (overcomplete), but enforce strict mathematical regularization penalties that force the network to keep the vast majority of hidden neurons completely inactive (zero or near-zero values) for any given input sample. 
 
@@ -7,7 +12,7 @@ In modern artificial intelligence, SAEs have undergone a massive resurgence, tra
 
 ---
 
-## 1. The Chronological Evolution
+## 📅 1. The Chronological Evolution
 
 The technical progression of sparse autoencoding has transitioned from classical tabular density regularizers to large-scale, dictionary-learning model auditing engines integrated with modern transformer scaling boundaries.
 
@@ -26,7 +31,7 @@ flowchart LR
 
 ---
 
-## 2. Core Functional & Sparsity Variants
+## 🧬 2. Core Functional & Sparsity Variants
 
 The Sparse Autoencoder family tree features specialized mathematical formulations designed to govern how the hidden neuron activations are constrained and normalized.
 
@@ -39,7 +44,7 @@ The Sparse Autoencoder family tree features specialized mathematical formulation
 
 ---
 
-## 3. Post-Training Interpretability & Auditing Classes
+## 🔍 3. Post-Training Interpretability & Auditing Classes
 
 Depending on how an SAE interfaces with an operational neural network stack during research and verification passes, it fulfills distinct safety and analysis pipelines.
 
@@ -51,7 +56,7 @@ Depending on how an SAE interfaces with an operational neural network stack duri
 
 ---
 
-## 4. Production Engineering Challenges & Hardware Solutions
+## ⚙️ 4. Production Engineering Challenges & Hardware Solutions
 
 Deploying large-scale SAE analysis matrices over massive, industrial deep learning models introduces intense memory bottlenecks and token processing latency.
 
@@ -62,7 +67,7 @@ Deploying large-scale SAE analysis matrices over massive, industrial deep learni
 
 ---
 
-## 5. Frontier Real-World AI Safety Applications
+## 🛡️ 5. Frontier Real-World AI Safety Applications
 
 | Safety Application | Use Case & Details | First Used Year | First Used Paper |
 | :--- | :--- | :--- | :--- |
